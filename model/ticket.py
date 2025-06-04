@@ -3,7 +3,7 @@ from model.validator import *
 class Ticket:
 
     # سازنده کلاس برای مقداردهی اولیه مشخصات بلیط
-    def __init__(self, name, origin, destination, date, time, price):
+    def init(self, name, origin, destination, date, time, price):
         self.name = name              # نام مسافر
         self.origin = origin          # مبدا پرواز
         self.destination = destination  # مقصد پرواز

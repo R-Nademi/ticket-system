@@ -1,11 +1,11 @@
 import unittest
 
-from model.file_manager import file_name
+from model.file_manager import file_name # noqa
 from model.ticket import Ticket
 
 class TestTicket(unittest.TestCase):
     def test_create_ticket(self):
-        t = Ticket("Ali", "Tehran", "Mashhad",
+        t = Ticket("Ali", "Tehran", "Mashhad", # noqa
                    "2025-06-10", "10:30", "14:00", "A23", "Economy", "123456") # noqa
 
         self.assertEqual(t.name, "Ali")

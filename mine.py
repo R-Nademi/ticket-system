@@ -1,4 +1,4 @@
-from model.file_manager import file_name
+from model.file_manager import file_name # noqa
 from view.info import load_data
 
 

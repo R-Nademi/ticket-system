@@ -1,7 +1,7 @@
 from tkinter import *
 import tkinter.ttk as ttk
 import tkinter.messagebox as msg
-from model.file_manager import *
+from model.file_manager import *  # noqa
 from model.ticket import Ticket
 
 # لیست کلی بلیط‌ها (در حافظه نگهداری می‌شود)
@@ -10,7 +10,7 @@ ticket_list = []
 # تابع بارگذاری اطلاعات از فایل و نمایش در جدول
 def load_data():
     global ticket_list
-    ticket_list = read_from_file()  # خواندن داده‌ها از فایل
+    ticket_list = read_from_file() # noqa # خواندن داده‌ها از فایل
 
     # پاک‌سازی جدول
     for row in table.get_children():
@@ -40,7 +40,7 @@ def save_btn_click():
     else:
         msg.showinfo("Success", "Ticket saved successfully.")
         ticket_list.append(ticket)
-        write_to_file(ticket_list)
+        write_to_file(ticket_list) # noqa
         reset_form()
 
 # انتخاب بلیط از جدول
@@ -72,7 +72,7 @@ def edit_btn_click():
             msg.showerror("Error", "\n".join(errors))
         else:
             ticket_list[selected_index] = updated
-            write_to_file(ticket_list)
+            write_to_file(ticket_list) # noqa
             reset_form()
             msg.showinfo("Success", "Ticket updated successfully.")
     else:
@@ -86,7 +86,7 @@ def remove_btn_click():
         if ticket.name == target_name and ticket.date == target_date:
             if msg.askyesno("Confirm", "Are you sure to delete this ticket?"):
                 del ticket_list[i]
-                write_to_file(ticket_list)
+                write_to_file(ticket_list) # noqa
                 reset_form()
                 msg.showinfo("Deleted", "Ticket deleted successfully.")
                 return

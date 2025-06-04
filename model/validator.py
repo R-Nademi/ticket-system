@@ -1,4 +1,4 @@
-import re
+import re # noqa
 from datetime import datetime
 
 

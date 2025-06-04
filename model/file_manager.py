@@ -20,7 +20,7 @@ def read_from_file():
                 # فایل خالی است
                 return []
         except Exception as e:
-            print(" خطا در خواندن فایل:", e)
+            print("   خطا در خواندن فایل:", e)
             # اگر فایل خراب باشد، حذف و ساخت مجدد فایل
             os.remove(file_name)
             open(file_name, "wb").close()
