@@ -11,24 +11,4 @@ class Ticket {
   + validate(): list
 }
 
-class FileManager {
-  + write_to_file(data)
-  + read_from_file()
-}
-
-class Validator {
-  + validate(ticket)
-}
-
-class GUI {
-  + input fields
-  + TreeView Table
-  + Buttons (Save...)
-  + Filter/Search
-}
-
-Ticket --> FileManager : uses
-FileManager --> Validator : uses
-Validator --> GUI : used by
-
 @enduml

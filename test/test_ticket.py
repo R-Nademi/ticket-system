@@ -1,22 +1,31 @@
-import unittest
-
-from model.file_manager import file_name # noqa
+from model.file_manager import file_name
 from model.ticket import Ticket
+from datetime import datetime
 
-class TestTicket(unittest.TestCase):
-    def test_create_ticket(self):
-        t = Ticket("Ali", "Tehran", "Mashhad", # noqa
-                   "2025-06-10", "10:30", "14:00", "A23", "Economy", "123456") # noqa
+t = Ticket(
+    "Ali","Tehran","Mashhad",2023,12,15,20,0,2023,12,15,21,0, "Economy", "IranAir", "123456")
 
-        self.assertEqual(t.name, "Ali")
-        self.assertEqual(t.origin, "Tehran")
-        self.assertEqual(t.destination, "Mashhad")
-        self.assertEqual(t.date, "2025-06-10")
-        self.assertEqual(t.departure_time, "10:30") # noqa
-        self.assertEqual(t.arrival_time, "14:00") # noqa
-        self.assertEqual(t.seat, "A23") # noqa
-        self.assertEqual(t.class_type, "Economy") # noqa
-        self.assertEqual(t.ticket_number, "123456") # noqa
 
-if file_name == 'mine':
-    unittest.main()
+print("name test passed" if t.name == "Ali" else "name test failed")
+print("origin test passed" if t.origin == "Tehran" else "origin test failed")
+print("destination test passed" if t.destination == "Mashhad" else "destination test failed")
+print("date time test passed" if t.date == "2021-12-15" else "date time test failed")
+print("date time test passed" if t.date == "2021-12-15" else "date time test failed")
+print("economy test passed" if t.date == "2021-12-15 hour:20" else "economy test failed")
+print("economy test passed" if t.date == "2021-12-15 hour:21" else "economy test failed")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

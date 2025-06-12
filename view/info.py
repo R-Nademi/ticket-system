@@ -13,7 +13,7 @@ def load_data():
     ticket_list = read_from_file() # noqa # خواندن داده‌ها از فایل
 
     # پاک‌سازی جدول
-    for row in table.get_children():
+    for row in table.get():
         table.delete(row)
 
     # اضافه‌کردن بلیط‌ها به جدول
@@ -100,11 +100,13 @@ window.title("Ticket Info")
 window.geometry("900x400")  # عرض بیشتر برای جدول سمت راست
 
 # تعریف متغیرهای فرم
+id_ = StringVar()
 name = StringVar()
 origin = StringVar()
 destination = StringVar()
-date = StringVar()
-time = StringVar()
+start_date_time = StringVar()
+end_date_time = StringVar()
+airline = StringVar()
 price = StringVar()
 
 # ساخت لیبل‌ها و ورودی‌ها در سمت چپ با متد place
