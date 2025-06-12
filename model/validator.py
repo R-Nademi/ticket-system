@@ -12,7 +12,6 @@ def passenger_validator(name):
 def location_validator(loc):
     return isinstance(loc, str) and len(loc) >= 2
 
-
 def date_validator(date_str):
     try:
         datetime.strptime(date_str, "%Y-%m-%d")
@@ -20,14 +19,12 @@ def date_validator(date_str):
     except ValueError:
         return False
 
-
 def time_validator(time_str):
     try:
         datetime.strptime(time_str, "%H:%M")
         return True
     except ValueError:
         return False
-
 
 def ticket_validator(ticket):
     errors = []
