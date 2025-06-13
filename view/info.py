@@ -85,7 +85,7 @@ def edit_btn_click():
 # حذف بلیط
 def remove_btn_click():
     target_name = name.get()
-    target_date = datetime.get()
+    target_date = start_date_time.get()
     for i, ticket in enumerate(ticket_list):
         if ticket.name == target_name and ticket.date_time == target_date:
             if msg.askyesno("Confirm", "Are you sure to delete this ticket?"):
