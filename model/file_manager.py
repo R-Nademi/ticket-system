@@ -1,14 +1,13 @@
 import os
 import pickle
 
-# نام فایل داده‌ها
 file_name = "ticket.dat"
 
-# بررسی وجود فایل
+
 def check_file():
     return os.path.exists(file_name)
 
-# تابع خواندن داده‌ها از فایل
+
 def read_from_file():
     if check_file():
         try:
@@ -30,7 +29,6 @@ def read_from_file():
         open(file_name, "wb").close()
         return []
 
-# تابع نوشتن داده‌ها در فایل
 def write_to_file(data_list):
     with open(file_name, "wb") as file:
         pickle.dump(data_list, file) # noqa

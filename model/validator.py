@@ -1,9 +1,11 @@
-import re # noqa
+import re
 from datetime import datetime
 
+from view.info import start_date_time, end_date_time
 
-def id_validator(id): # noqa
-    return isinstance(id, int) and id > 0
+
+def id_validator(id_):
+    return isinstance(id_, int) and id_ > 0
 
 
 def passenger_validator(name):
@@ -13,9 +15,9 @@ def location_validator(loc):
     return isinstance(loc, str) and len(loc) >= 2
 
 
-def date_validator(date_str):
+def date_validator(_str):
     try:
-        datetime.strptime(date_str, "%Y-%m-%d")
+        datetime.strptime(start_date_time, "%Y-%m-%d")
         return True
     except ValueError:
         return False
@@ -23,7 +25,7 @@ def date_validator(date_str):
 
 def time_validator(time_str):
     try:
-        datetime.strptime(time_str, "%H:%M")
+        datetime.strptime(end_date_time, "%H:%M")
         return True
     except ValueError:
         return False
@@ -33,14 +35,16 @@ def ticket_validator(ticket):
     errors = []
     if not id_validator(ticket.id):
         errors.append("Invalid ID")
-    if not passenger_validator(ticket.passenger_name):
-        errors.append("Invalid Passenger Name")
+    if not name_validator(ticket.name):
+        errors.append("Invalid Name")
     if not location_validator(ticket.origin):
         errors.append("Invalid Origin")
     if not location_validator(ticket.destination):
         errors.append("Invalid Destination")
-    if not date_validator(ticket.flight_date):
+    if not date_validator(ticket.start_date_time):
         errors.append("Invalid Flight Date (yyyy-mm-dd)")
-    if not time_validator(ticket.flight_time):
+    if not time_validator(end_date_time):
         errors.append("Invalid Flight Time (hh:mm)")
+    if not ticket_type_validator(ticket):
+        errors.append("Invalid Ticket Type")
     return errors

@@ -10,5 +10,4 @@ class Ticket {
   + to_tuple(): tuple
   + validate(): list
 }
-
 @enduml
