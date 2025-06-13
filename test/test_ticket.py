@@ -2,7 +2,6 @@ from model.file_manager import file_name
 from model.ticket import Ticket
 from datetime import datetime
 
-from view.info import end_date_time
 
 t = Ticket("Ali", "Tehran", "Mashhad",
                    "2025-06-10", "10:30",
@@ -20,4 +19,4 @@ print("price test passed" if t.price == "economy" else "price test failed")
 
 
 if file_name == 'mine':
-    datetime.main()
+    Ticket.main()
