@@ -4,6 +4,8 @@ from model.ticket import Ticket
 
 
 
+
+
 t = Ticket("Ali", "Tehran", "Mashhad",
                    "2025-06-10", "10:30",
            "14:00", "airline", "Economy")

@@ -59,9 +59,9 @@ def ticket_validator(ticket):
         errors.append("Destination")
     if not start_date_time_validator(ticket.start_date_time):
         errors.append("start_date_time_")
-    if not end_date_time_validator(end_date_time):
+    if not end_date_time_validator(ticket.end_date_time):
         errors.append("end_date_time")
-    if not ticket_type_validator(ticket):
+    if not ticket_type_validator(ticket.ticket_type):
         errors.append("Ticket_Type")
     if not price_validator(ticket.price):
         errors.append("Price")

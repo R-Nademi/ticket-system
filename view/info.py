@@ -15,15 +15,12 @@ def load_data():
     global ticket_list
     ticket_list = read_from_file() # noqa # خواندن داده‌ها از فایل
 
-    # پاک‌سازی جدول
-    for row in table.get():
-        table.delete(row)
 
     # اضافه‌کردن بلیط‌ها به جدول
     for ticket in ticket_list:
         table.insert("", END, values=ticket.to_tuple())
 
-# پاک‌سازی فرم
+
 def reset_form():
     id_.set("")
     name.set("")
@@ -33,12 +30,12 @@ def reset_form():
     end_date_time.set("")
     ticket_type.set("")
     price.set("")
-    load_data()  # بازخوانی جدول
+    load_data()
 
-# ذخیره‌سازی بلیط جدید
+
 def save_btn_click():
-    ticket = Ticket(id_.get(), name.get(), origin.get(), destination.get(), # noqa
-                    start_date_time.get(),end_date_time.get(), airline.get(), int(price.get())) # noqa
+    ticket = Ticket(id_.get(), name.get(), origin.get(), destination.get(),
+                    start_date_time.get(),end_date_time.get(), ticket_type.get(), int(price.get()))
     errors = ticket.validate()
     if errors:
         msg.showerror("Error", "\n".join(errors))
@@ -48,7 +45,7 @@ def save_btn_click():
         write_to_file(ticket_list)
         reset_form()
 
-# انتخاب بلیط از جدول
+
 def table_select(event):
     print(event.widget.get())
     selected = table.item(table.focus())["values"]
@@ -63,11 +60,11 @@ def table_select(event):
         ticket_type.set(selected_ticket.ticket_type)
         price.set(selected_ticket.price)
 
-# ویرایش بلیط
+
 def edit_btn_click():
     selected_index = None
     for i, ticket in enumerate(ticket_list):
-        if ticket.name == name.get() and ticket.date_time == datetime.get():
+        if ticket.name == name.get() and ticket.start_date_time == start_date_time.get():
             selected_index = i
             break
 
@@ -88,7 +85,7 @@ def edit_btn_click():
 # حذف بلیط
 def remove_btn_click():
     target_name = name.get()
-    target_date = "date_time".get()
+    target_date = datetime.get()
     for i, ticket in enumerate(ticket_list):
         if ticket.name == target_name and ticket.date_time == target_date:
             if msg.askyesno("Confirm", "Are you sure to delete this ticket?"):
@@ -104,7 +101,7 @@ def remove_btn_click():
 # ایجاد پنجره اصلی
 window = Tk()
 window.title("Ticket Info")
-window.geometry("900x400")  # عرض بیشتر برای جدول سمت راست
+window.geometry("900x400")
 
 # تعریف متغیرهای فرم
 id_ = StringVar()
