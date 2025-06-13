@@ -3,15 +3,13 @@ from model.validator import *
 class Ticket:
 
     # سازنده کلاس برای مقداردهی اولیه مشخصات بلیط
-    def __init__(self ,id_, name, origin, destination,start_date_time,end_date_time,airline, price):
-        self.id_ = id_
-        self.name = name
-        self.origin = origin
-        self.destination = destination
-        self.start_date_time = start_date_time
-        self.end_date_time = end_date_time
-        self.airline = airline
-        self.price = price
+    def init(self, name, origin, destination, date, time, price):
+        self.name = name              # نام مسافر
+        self.origin = origin          # مبدا پرواز
+        self.destination = destination  # مقصد پرواز
+        self.date = date              # تاریخ پرواز
+        self.time = time              # ساعت پرواز
+        self.price = price            # قیمت بلیط
 
     # متد اعتبارسنجی با استفاده از تابع خارجی
     def validate(self):
@@ -19,5 +17,4 @@ class Ticket:
 
     # تبدیل شی به یک تاپل برای نمایش در جدول
     def to_tuple(self):
-        return (self.id_,self.name, self.origin, self.destination, self.start_date_time,
-                self.end_date_time, self.airline, self.price)
+        return (self.name, self.origin, self.destination, self.date, self.time, self.price) # noqa
