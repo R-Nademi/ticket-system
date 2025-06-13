@@ -101,7 +101,7 @@ def remove_btn_click():
 # ایجاد پنجره اصلی
 window = Tk()
 window.title("Ticket Info")
-window.geometry("900x400")
+window.geometry("1100x400")
 
 # تعریف متغیرهای فرم
 id_ = StringVar()
@@ -139,7 +139,7 @@ Label(window, text="Price:").place(x=20, y=220)
 Entry(window, textvariable=price).place(x=130, y=220)
 
 # جدول سمت راست برای نمایش بلیط‌ها
-table = ttk.Treeview(window, columns=("id_","name", "origin", "destination", "star_date_time","end_date_time","ticket_type","price"), show="headings")
+table = ttk.Treeview(window, columns=("id_","name", "origin", "destination", "start_date_time","end_date_time","ticket_type","price"), show="headings")
 table.heading("id_", text="id_")
 table.heading("name", text="name")
 table.heading("origin", text="origin")
@@ -150,12 +150,12 @@ table.heading("ticket_type", text="ticket_type")
 table.heading("price", text="Price")
 
 # تنظیم عرض ستون‌ها
-table.column("id_", width=100)
+table.column("id_", width=50)
 table.column("name", width=100)
 table.column("origin", width=100)
 table.column("destination", width=100)
-table.column("start_date_time", width=100)
-table.column("end_date_time", width=80)
+table.column("start_date_time", width=120)
+table.column("end_date_time", width=120)
 table.column("ticket_type", width=80)
 table.column("price", width=80)
 
