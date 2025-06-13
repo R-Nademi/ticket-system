@@ -1,6 +1,7 @@
+import  unittest
 from model.file_manager import file_name
 from model.ticket import Ticket
-from datetime import datetime
+
 
 
 t = Ticket("Ali", "Tehran", "Mashhad",
@@ -19,4 +20,4 @@ print("price test passed" if t.price == "economy" else "price test failed")
 
 
 if file_name == 'mine':
-    Ticket.main()
+    unittest.main()

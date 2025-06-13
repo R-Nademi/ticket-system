@@ -15,7 +15,7 @@ def origin_validator(origin):
     return isinstance(origin, str) and re.match(r"^[a-zA-Z\s]{3,30}$", origin)
 
 def destination_validator(destination):
-    return isinstance(destination, str) and len(destination) >= 2
+    return isinstance(destination, str) and len(destination) >= 10
 
 
 def start_date_time_validator(time):
@@ -28,7 +28,7 @@ def start_date_time_validator(time):
 
 def end_date_time_validator(time):
     try:
-        datetime.strptime(end_date_time, "%H:%M")
+        datetime.strptime(end_date_time,"%Y-%m-%d")
         return True
     except ValueError:
         return False
