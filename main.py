@@ -6,6 +6,6 @@ from view.info import load_data
 def print_hi(name):
     print(f'hi, {name}')
 
-if file_name == '_mine_':
+if file_name == '_main_':
     load_data()
     print_hi('pycharm')

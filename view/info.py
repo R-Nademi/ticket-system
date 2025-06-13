@@ -117,13 +117,13 @@ price = StringVar()
 Label(window, text="id_:").place(x=20,y=20)
 Entry(window, textvariable=id_).place(x=130,y=20)
 
-Label(window, text="Name:").place(x=20, y=20)
+Label(window, text="name:").place(x=20, y=20)
 Entry(window, textvariable=name).place(x=130, y=20)
 
-Label(window, text="Origin:").place(x=20, y=60)
+Label(window, text="origin:").place(x=20, y=60)
 Entry(window, textvariable=origin).place(x=130, y=60)
 
-Label(window, text="Destination:").place(x=20, y=100)
+Label(window, text="destination:").place(x=20, y=100)
 Entry(window, textvariable=destination).place(x=130, y=100)
 
 Label(window, text="start_date_time (YYYY-MM-DD):").place(x=20, y=140)
@@ -140,10 +140,10 @@ Entry(window, textvariable=price).place(x=130, y=220)
 
 # جدول سمت راست برای نمایش بلیط‌ها
 table = ttk.Treeview(window, columns=("id_","name", "origin", "destination", "star_date_time","end_date_time","ticket_type","price"), show="headings")
-table.heading("id_", text="ID_")
-table.heading("name", text="Name")
-table.heading("origin", text="Origin")
-table.heading("destination", text="Destination")
+table.heading("id_", text="id_")
+table.heading("name", text="name")
+table.heading("origin", text="origin")
+table.heading("destination", text="destination")
 table.heading("start_date_time", text="start_date_time")
 table.heading("end_date_time", text="end_date_time")
 table.heading("ticket_type", text="ticket_type")

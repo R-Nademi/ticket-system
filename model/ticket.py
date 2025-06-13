@@ -1,17 +1,17 @@
 from model.validator import *
 
 class Ticket:
-
-
     def __init__(self,id_, name, origin, destination,start_date_time,end_date_time,ticket_type, price):
-        self.id_ = id_
-        self.name = name
-        self.origin = origin
-        self.destination = destination
-        self.start_date_time = start_date_time
-        self.end_date_time = end_date_time
-        self.ticket_type = ticket_type
-        self.price = price
+     self.id_ = id_
+     self.name = name
+     self.origin = origin
+     self.destination = destination
+     self.start_date_time = start_date_time
+     self.end_date_time = end_date_time
+     self.ticket_type = ticket_type
+     self.price = price
+
+
 
 
     def validate(self):
