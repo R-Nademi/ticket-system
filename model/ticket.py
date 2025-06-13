@@ -1,7 +1,6 @@
 from model.validator import *
 
 
-
 class Ticket:
 
     # سازنده کلاس برای مقداردهی اولیه مشخصات بلیط
