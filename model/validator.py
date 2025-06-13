@@ -1,7 +1,7 @@
 import re
 from datetime import datetime
 
-from view.info import start_date_time, end_date_time
+
 
 
 def id_validator(id_):
@@ -20,6 +20,7 @@ def destination_validator(destination):
 
 def start_date_time_validator(time):
     try:
+        from view.info import start_date_time, end_date_time
         datetime.strptime(start_date_time, "%Y-%m-%d")
         return True
     except ValueError:
@@ -28,6 +29,7 @@ def start_date_time_validator(time):
 
 def end_date_time_validator(time):
     try:
+        from view.info import start_date_time, end_date_time
         datetime.strptime(end_date_time,"%Y-%m-%d")
         return True
     except ValueError:

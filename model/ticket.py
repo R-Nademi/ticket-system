@@ -1,6 +1,5 @@
 from model.validator import *
 
-
 class Ticket:
 
 

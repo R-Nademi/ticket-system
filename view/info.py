@@ -132,11 +132,11 @@ Entry(window, textvariable=destination).place(x=130, y=100)
 Label(window, text="start_date_time (YYYY-MM-DD):").place(x=20, y=140)
 Entry(window, textvariable=start_date_time).place(x=130, y=140)
 
-Label(window, text="end_date_time (HH:MM):").place(x=20, y=180)
+Label(window, text="end_date_time (YYYY-MM-DD):").place(x=20, y=180)
 Entry(window, textvariable=end_date_time).place(x=130, y=180)
 
 Label(window, text="ticket_type:").place(x=20, y=20)
-Entry(window, textvariable=airline).place(x=130, y=20)
+Entry(window, textvariable=ticket_type).place(x=130, y=20)
 
 Label(window, text="Price:").place(x=20, y=220)
 Entry(window, textvariable=price).place(x=130, y=220)
