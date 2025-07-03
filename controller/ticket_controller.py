@@ -4,9 +4,9 @@ from test.ticket_test import ticket
 ticket_list = []
 
 class TicketController:
-    def save(self,code, family,name,origin,destination,start_date_time,end_date_time,ticket_type,price):
+    def save(self,code,name,family,origin,destination,start_date_time,end_date_time,ticket_type,price):
         try:
-            ticket = Ticket(code,name, family,origin,destination,start_date_time,end_date_time,ticket_type,price)
+            ticket = Ticket(code,name,family,origin,destination,start_date_time,end_date_time,ticket_type,price)
             ticket_list.append(ticket)
             return True,f"ticket save successfully{ticket}"
         except Exception as e:
