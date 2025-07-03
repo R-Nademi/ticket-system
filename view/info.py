@@ -71,7 +71,7 @@ def edit_btn_click():
             break
 
     if selected_index is not None:
-        updated = Ticket(code.get(),name.get(), origin.get(), destination.get(),start_date_time.get(),end_date_time.get(),
+        updated = Ticket(code.get(),name.get(),family.get(), origin.get(), destination.get(),start_date_time.get(),end_date_time.get(),
                          ticket_type.get(), int(price.get()))
         errors = updated.validate()
         if errors:
@@ -117,7 +117,7 @@ ticket_type = StringVar()
 price = StringVar()
 
 # ساخت لیبل‌ها و ورودی‌ها در سمت چپ با متد place
-Label(window, text="Id").place(x=20,y=20)
+Label(window, text="Code").place(x=20,y=20)
 Entry(window, textvariable=code).place(x=130,y=20)
 
 Label(window, text="Name").place(x=20, y=20)
