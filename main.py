@@ -1,6 +1,6 @@
-from model.file_manager import file_name
+from model.repository.file_manager import file_name
 
-from view.info import load_data
+from view.ticket_view import load_data
 
 
 def print_hi(name):
