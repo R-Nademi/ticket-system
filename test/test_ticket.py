@@ -12,7 +12,7 @@ t = Ticket("Ali", "Tehran", "Mashhad",
            "14:00", "airline", "Economy")
 
 
-print("id_ test passed" if t.id_ == "ali" else "id_ test failed")
+print("code test passed" if t.code == "ali" else "code test failed")
 print("name test passed" if t.name == "tehran" else "name test failed")
 print("origin test passed" if t.origin == "mashhad" else "origin test failed")
 print("destination test passed" if t.destination == "2025-06-10" else "destination test failed")

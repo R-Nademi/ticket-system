@@ -2,8 +2,8 @@ import re
 from datetime import datetime
 
 
-def id_validator(id_):
-    return isinstance(id_, int) and id_ > 0
+def codevalidator(code):
+    return isinstance(code, int) and code > 0
 
 
 def name_validator(name):
@@ -49,8 +49,8 @@ def price_validator(price):
 
 def ticket_validator(ticket):
     errors = []
-    if not id_validator(ticket.id):
-        errors.append("ID_")
+    if not codevalidator(ticket.id):
+        errors.append("code")
     if not name_validator(ticket.name):
         errors.append("Name")
     if not origin_validator(ticket.origin):
