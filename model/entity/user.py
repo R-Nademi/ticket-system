@@ -1,6 +1,9 @@
 from model.validator import *
 
-from model.validator import code_validator, name_validator, family_validator
+from model.validator import code_validator, name_validator, family_validator,
+username_validator,password_validator,role_validator
+
+
 
 
 class User:

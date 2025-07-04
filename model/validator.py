@@ -18,6 +18,23 @@ def family_validator(family):
         raise ValueError("Invalid family !!!")
 
 
+def username_validator(username):
+    if not (type(username) == str and re.match(r"^[a-zA-Z\s]{3,30}$",username)):
+        raise ValueError("Invalid username !!!")
+
+
+def password_validator(password):
+    if not (type(password) == str and re.match(r"^[a-zA-Z\s]{3,30}$",password)):
+        raise ValueError("Invalid password !!!")
+
+
+def role_validator(role):
+    if not (type(role) == str and re.match(r"^[a-zA-Z\s]{3,30}$",role)):
+        raise ValueError("Invalid role !!!")
+
+
+
+
 def origin_validator(origin):
     if not (type(origin) == str and re.match(r"^[a-zA-Z\s]{3,30}$", origin)):
         raise ValueError("Invalid origin !!!")
@@ -52,26 +69,3 @@ def price_validator(price):
         raise ValueError("Invalid price !!!")
 
 
-
-
-def ticket_validator(ticket):
-    errors = []
-    if not code_validator(ticket.code):
-        errors.append("Code")
-    if not name_validator(ticket.name):
-        errors.append("Name")
-    if not family_validator(ticket.family):
-        errors.append("Family")
-    if not origin_validator(ticket.origin):
-        errors.append("Origin")
-    if not destination_validator(ticket.destination):
-        errors.append("Destination")
-    if not start_date_time_validator(ticket.start_date_time):
-        errors.append("Start_date_time_")
-    if not end_date_time_validator(ticket.end_date_time):
-        errors.append("End_date_time")
-    if not ticket_type_validator(ticket.ticket_type):
-        errors.append("Ticket_Type")
-    if not price_validator(ticket.price):
-        errors.append("Price")
-    return errors
