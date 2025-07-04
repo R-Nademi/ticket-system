@@ -3,7 +3,7 @@ from model.entity.ticket import Ticket
 
 ticket_list = []
 
-class ticket_Controller:
+class ticketcontroller:
     def save(self,code,name,family,origin,destination,start_date_time,end_date_time,ticket_type,price):
         try:
             ticket = Ticket(code,name,family,origin,destination,start_date_time,end_date_time,ticket_type,price)
