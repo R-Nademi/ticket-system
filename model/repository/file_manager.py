@@ -1,9 +1,7 @@
 import os
-import json
-
+import pickle
 
 file_name = "ticket.dat"
-
 
 def check_file():
     return os.path.exists(file_name)
@@ -11,25 +9,16 @@ def check_file():
 
 def read_from_file():
     if check_file():
-        try:
-
-            if os.path.getsize(file_name) > 0:
-                with open(file_name, "rb") as file:
-                    return json.load(file)
-            else:
-
-                return []
-        except Exception as e:
-            print("Error reading file !!!", e)
-
-            os.remove(file_name)
-            open(file_name, "wb").close()
-            return []
+        file = open(file_name, "rb")
+        data_list = pickle.load(file)
+        file.close()
+        return data_list
     else:
-
-        open(file_name, "wb").close()
+        file = open(file_name, "wb")
+        file.close()
         return []
 
 def write_to_file(data_list):
-    with open(file_name, "wb") as file:
-        json.dump(data_list, file)
+    file = open(file_name, "wb")
+    pickle.dump(data_list, file)
+    file.close()
