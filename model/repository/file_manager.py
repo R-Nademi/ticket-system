@@ -9,16 +9,32 @@ def check_file():
 
 def read_from_file():
     if check_file():
-        file = open(file_name, "rb")
-        data_list = pickle.load(file)
-        file.close()
-        return data_list
+        try:
+            if os.path.exists(file_name):
+                with open(file_name, "rb") as file:
+                    return pickle.load(file)
+
+            else:
+
+                return []
+        except Exception as e:
+            print("Error reading from file:", e)
+
+            os.remove(file_name)
+            open(file_name, "wb").close()
+            return []
+
     else:
-        file = open(file_name, "wb")
-        file.close()
+
+        open(file_name, "wb").close()
         return []
 
 def write_to_file(data_list):
-    file = open(file_name, "wb")
-    pickle.dump(data_list, file)
-    file.close()
+    with open(file_name, "wb") as file:
+        pickle.dump(data_list, file)
+
+
+
+
+
+
