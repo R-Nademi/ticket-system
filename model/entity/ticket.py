@@ -1,4 +1,5 @@
 from model.tools.validator import *
+from model.validator import code_validator, family_validator
 
 
 class Ticket:
@@ -24,9 +25,9 @@ class Ticket:
         return self._code
 
     @code.setter
-    def code(self, code):
-        code_validator(code)
-        self._code = code
+    def code(self, value):
+        code_validator(value)
+        self._code = value
 
     @property
     def name(self):
@@ -75,7 +76,6 @@ class Ticket:
 
     @property
     def end_date_time(self):
-        end_date_time_validator(value)
         return self._end_date_time
 
     @end_date_time.setter

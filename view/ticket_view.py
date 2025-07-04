@@ -4,18 +4,16 @@ import tkinter.messagebox as msg
 from model.repository.file_manager import *
 from model.entity.ticket import Ticket
 from model.entity.ticket import datetime
+from view.info import family
 
 
 
-# لیست کلی بلیط‌ها (در حافظه نگهداری می‌شود)
-
-# تابع بارگذاری اطلاعات از فایل و نمایش در جدول
 def load_data():
     global ticket_list
-    ticket_list = read_from_file() # noqa # خواندن داده‌ها از فایل
+    ticket_list = read_from_file()
 
 
-    # اضافه‌کردن بلیط‌ها به جدول
+
     for ticket in ticket_list:
         table.insert("", END, values=ticket.to_tuple())
 
@@ -33,9 +31,9 @@ def reset_form():
 
 
 def save_btn_click():
-    ticket = Ticket(code.get(), name.get(), origin.get(), destination.get(),
+    ticket = Ticket(code.get(), name.get(),family.get(), origin.get(), destination.get(),
                     start_date_time.get(),end_date_time.get(), ticket_type.get(), int(price.get()))
-    errors = ticket.validate()
+    errors = ticket.values()
     if errors:
         msg.showerror("Error", "\n".join(errors))
     else:
@@ -46,12 +44,13 @@ def save_btn_click():
 
 
 def table_select(event):
-    print(event.widget.get())
+    print(event.widget.get()
     selected = table.item(table.focus())["values"]
     if selected:
         selected_ticket = Ticket(*selected)
         code.set(selected_ticket.code)
         name.set(selected_ticket.name)
+        family.set(selected_ticket.family)
         origin.set(selected_ticket.origin)
         destination.set(selected_ticket.destination)
         start_date_time.set(selected_ticket.start_date_time)
@@ -70,7 +69,7 @@ def edit_btn_click():
     if selected_index is not None:
         updated = Ticket(code.get(),name.get(), origin.get(), destination.get(),start_date_time.get(),end_date_time.get(),
                          ticket_type.get(), int(price.get()))
-        errors = updated.validate()
+        errors = updated.values()
         if errors:
             msg.showerror("Error", "\n".join(errors))
         else:

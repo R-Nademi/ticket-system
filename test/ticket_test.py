@@ -6,7 +6,7 @@ from datetime import datetime
 
 
 
-ticket = Ticket(1, "Ali", "Mohammad",
+ticket = Ticket(1, "Ali", "AliPour",
                    "Mashhad", "10:30",
            "14:00", "16:00", "Airline")
 

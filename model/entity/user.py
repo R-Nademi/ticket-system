@@ -2,10 +2,14 @@ from model.tools.validator import *
 
 
 class User:
-    def __init__(self, code, name, family, username,password,):
+    def __init__(self, code, name, family, username,password,role):
         self.code = code
         self.name = name
         self.family = family
+        self.username = username
+        self.password = password
+        self.role = role
+
 
 
     def __repr__(self):
@@ -21,5 +25,5 @@ class User:
 
     @code.setter
     def code(self, value):
-        code__Validator(code)
+        code_Validator(code)
         self._code = code

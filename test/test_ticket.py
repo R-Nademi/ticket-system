@@ -7,14 +7,14 @@ from datetime import datetime
 
 
 
-t = Ticket("1", "Ali","Mohammad",
+t = Ticket("1", "Ali","AliPour",
                    "Mashhad", "10:30",
            "14:00", "16:00", "Airline")
 
 
 print("code test passed" if t.code == "1" else "code test failed")
 print("name test passed" if t.name == "Ali" else "name test failed")
-print("family test passed" if t.family == "Mohammad" else "family test failed")
+print("family test passed" if t.family == "AliPour" else "family test failed")
 print("origin test passed" if t.origin == "Mashhad" else "origin test failed")
 print("destination test passed" if t.destination == "10:30" else "destination test failed")
 print("start_date_time test passed" if t.start_date_time ==  "14:00" else "start_date_time test failed")
