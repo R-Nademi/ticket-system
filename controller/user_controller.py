@@ -3,7 +3,7 @@ from model.entity.ticket import Ticket
 
 ticket_list = []
 
-class user_controller:
+class User_Controller:
     def save(self,code,name,family,username,password,role):
         try:
             ticket = Ticket(code,name,family,username,password,role)
@@ -18,6 +18,15 @@ class user_controller:
             return True,f"ticket edit successfully{ticket}"
         except Exception as e:
             return False,f"edit error{e}"
+
+
+    def delete(self,code):
+        try:
+            return true, f"ticket removed successfully - {code}"
+        except Exception as e:
+            return false, f"ticket removed failed\n{e}"
+
+
 
     def find_all(self):
         try:
