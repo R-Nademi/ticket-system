@@ -1,10 +1,7 @@
 import  unittest
-from model.file_manager import file_name
 from model.ticket import Ticket
 from datetime import datetime
-
-
-
+from model.repository.file_manager import file_name
 
 
 t = Ticket("1", "Ali","AliPour",
