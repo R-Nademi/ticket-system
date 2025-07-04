@@ -1,4 +1,4 @@
-from model.tools.validator import *
+from model.validator import *
 from model.validator import code_validator, family_validator
 
 

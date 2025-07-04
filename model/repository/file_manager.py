@@ -31,4 +31,4 @@ def read_from_file():
 
 def write_to_file(data_list):
     with open(file_name, "wb") as file:
-        pickle.dump(data_list, file) # noqa
+        pickle.dump(data_list, file)

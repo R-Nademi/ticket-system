@@ -3,7 +3,7 @@ from test.ticket_test import ticket
 
 ticket_list = []
 
-class user_Controller:
+class userController:
     def save(self,code,name,family,username,password,role):
         try:
             ticket = Ticket(code,name,family,username,password,role)
