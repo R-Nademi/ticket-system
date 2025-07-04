@@ -1,9 +1,4 @@
-
 from model.entity.ticket import Ticket
-
-
-
-
 
 
 ticket = Ticket(1, "Ali", "AliPour",
