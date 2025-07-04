@@ -1,5 +1,5 @@
 from model.entity.ticket import Ticket
-from test.ticket_test import ticket
+
 
 ticket_list = []
 
