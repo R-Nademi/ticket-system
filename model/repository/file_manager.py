@@ -1,5 +1,6 @@
 import os
-import pickle
+import json
+
 
 file_name = "ticket.dat"
 
@@ -14,7 +15,7 @@ def read_from_file():
 
             if os.path.getsize(file_name) > 0:
                 with open(file_name, "rb") as file:
-                    return pickle.load(file)
+                    return json.load(file)
             else:
 
                 return []
@@ -31,4 +32,4 @@ def read_from_file():
 
 def write_to_file(data_list):
     with open(file_name, "wb") as file:
-        pickle.dump(data_list, file)
+        json.dump(data_list, file)
