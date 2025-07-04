@@ -1,19 +1,20 @@
 from model.entity.ticket import Ticket
 
-ticket_list = []
+
+Ticket_list = []
 
 class TicketController:
     def save(self,code,name,family,origin,destination,start_date_time,end_date_time,ticket_type,price):
         try:
             ticket = Ticket(code,name,family,origin,destination,start_date_time,end_date_time,ticket_type,price)
-            ticket_list.append(ticket)
+            Ticket_list.append(ticket)
             return True,f"ticket save successfully{ticket}"
         except Exception as e:
             return False,f"save error{e}"
 
-    def edit(self,code,name, family,origin,destination,start_date_time,end_date_time,ticket_type):
+    def edit(self,code,name, family,origin,destination,start_date_time,end_date_time,ticket_type,price):
         try:
-            ticket = Ticket(code,name,family,origin,destination,start_date_time,end_date_time,ticket_type)
+            ticket = Ticket(code,name,family,origin,destination,start_date_time,end_date_time,ticket_type,price)
             return True,f"ticket edit successfully{ticket}"
         except Exception as e:
             return False,f"edit error{e}"
@@ -23,4 +24,5 @@ class TicketController:
             return True,ticket_list
         except Exception as e:
             return False,f"find error{e}"
+
 
