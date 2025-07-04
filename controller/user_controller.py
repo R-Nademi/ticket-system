@@ -3,7 +3,7 @@ from model.entity.ticket import Ticket
 
 ticket_list = []
 
-class user_Controller:
+class user_controller:
     def save(self,code,name,family,username,password,role):
         try:
             ticket = Ticket(code,name,family,username,password,role)
