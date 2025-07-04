@@ -12,12 +12,23 @@ class ticket_Controller:
         except Exception as e:
             return False,f"save error{e}"
 
+
     def edit(self,code,name, family,origin,destination,start_date_time,end_date_time,ticket_type,price):
         try:
             ticket = Ticket(code,name,family,origin,destination,start_date_time,end_date_time,ticket_type,price)
             return True,f"ticket edit successfully{ticket}"
         except Exception as e:
             return False,f"edit error{e}"
+
+
+
+    def delete(self,code):
+        try:
+            return true, f"ticket removed successfully - {code}"
+        except Exception as e:
+            return false, f"ticket removed failed\n{e}"
+
+
 
     def find_all(self):
         try:
