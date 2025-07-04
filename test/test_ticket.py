@@ -1,6 +1,5 @@
 import  unittest
 from model.ticket import Ticket
-from datetime import datetime
 from model.repository.file_manager import file_name
 
 
