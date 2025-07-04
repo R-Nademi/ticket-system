@@ -1,6 +1,5 @@
 from model.entity.ticket import Ticket
 
-
 ticket_list = []
 
 class TicketController:

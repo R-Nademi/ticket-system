@@ -4,8 +4,7 @@ import tkinter.messagebox as msg
 from model.repository.file_manager import *
 from model.entity.ticket import Ticket
 from model.entity.ticket import datetime
-
-
+from model.validator import ticket_type_validator
 
 
 def load_data():
