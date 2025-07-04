@@ -19,7 +19,7 @@ def read_from_file():
 
                 return []
         except Exception as e:
-            print("   خطا در خواندن فایل:", e)
+            print("Error reading file !!!", e)
 
             os.remove(file_name)
             open(file_name, "wb").close()

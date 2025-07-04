@@ -1,41 +1,28 @@
-from model.entity.user import User
-from model.besiness_logic.user_bl import UserBl
+from model.entity.ticket import Ticket
+from test.ticket_test import ticket
 
+ticket_list = []
 
-class UserController:
-    def save(self, id, name, family, birth_date, user_name, password, role):
+class user_Controller:
+    def save(self,code,name,family,username,password,role):
         try:
-            user = User(id, name, family, birth_date, user_name, password, role)
-            user.validate()
-            user_bl = UserBl()
-            user_bl.save(user)
-            return "info: User saved successfully"
+            ticket = Ticket(code,name,family,username,password,role)
+            ticket_list.append(ticket)
+            return True,f"ticket save successfully{ticket}"
         except Exception as e:
-            return f"Error: {str(e)}"
+            return False,f"save error{e}"
 
-    def edit(self, name, family):
+    def edit(self,code,name, family,username,password,role):
         try:
-            user = User(name, family)
-            user.validate()
-            user_bl = UserBl()
-            user_bl.edit(user)
-            return "info: User edit successfully"
+            ticket = Ticket(code,name,family,username,password,role)
+            return True,f"ticket edit successfully{ticket}"
         except Exception as e:
-            return f"Error: {str(e)}"
+            return False,f"edit error{e}"
 
-    def remove(self, id):
+    def find_all(self):
         try:
-            user_bl = UserBl()
-            user_bl.remove(id)
-            return "info: User remove successfully"
+            return True,ticket_list
         except Exception as e:
-            return f"Error: {str(e)}"
+            return False,f"find error{e}"
 
-    def find_by_name_and_family(self, name, family):
-        pass
 
-    def find_by_user_name(self, user_name):
-        pass
-
-    def find_by_role(self, role):
-        pass
