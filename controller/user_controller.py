@@ -22,9 +22,9 @@ class usercontroller:
 
     def delete(self,code):
         try:
-            return true, f"ticket removed successfully - {code}"
+            return True, f"ticket removed successfully - {code}"
         except Exception as e:
-            return false, f"ticket removed failed\n{e}"
+            return False, f"ticket removed failed\n{e}"
 
 
 
