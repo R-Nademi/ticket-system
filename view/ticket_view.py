@@ -4,7 +4,7 @@ import tkinter.messagebox as msg
 from model.repository.file_manager import *
 from model.entity.ticket import Ticket
 from model.entity.ticket import datetime
-from view.info import family
+
 
 
 
@@ -21,6 +21,7 @@ def load_data():
 def reset_form():
     code.set("")
     name.set("")
+    family.set("")
     origin.set("")
     destination.set("")
     start_date_time.set("")
@@ -104,6 +105,7 @@ window.geometry("1100x400")
 # تعریف متغیرهای فرم
 code = StringVar()
 name = StringVar()
+family = StringVar()
 origin = StringVar()
 destination = StringVar()
 start_date_time = StringVar()
