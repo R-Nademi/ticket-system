@@ -44,7 +44,7 @@ def save_btn_click():
 
 
 def table_select(event):
-    print(event.widget.get()
+    print(event.widget.get())
     selected = table.item(table.focus())["values"]
     if selected:
         selected_ticket = Ticket(*selected)
@@ -118,8 +118,13 @@ Entry(window, textvariable=code).place(x=130,y=20)
 Label(window, text="name:").place(x=20, y=20)
 Entry(window, textvariable=name).place(x=130, y=20)
 
+Label(window, text="family:").place(x=20, y=80)
+Entry(window, textvariable=family).place(x=130, y=80)
+
+
 Label(window, text="origin:").place(x=20, y=60)
 Entry(window, textvariable=origin).place(x=130, y=60)
+
 
 Label(window, text="destination:").place(x=20, y=100)
 Entry(window, textvariable=destination).place(x=130, y=100)
@@ -137,9 +142,10 @@ Label(window, text="Price:").place(x=20, y=220)
 Entry(window, textvariable=price).place(x=130, y=220)
 
 # جدول سمت راست برای نمایش بلیط‌ها
-table = ttk.Treeview(window, columns=("code","name", "origin", "destination", "start_date_time","end_date_time","ticket_type","price"), show="headings")
+table = ttk.Treeview(window, columns=("code","name", "origin","family", "destination", "start_date_time","end_date_time","ticket_type","price"), show="headings")
 table.heading("code", text="code")
 table.heading("name", text="name")
+table.heading("family", text="family")
 table.heading("origin", text="origin")
 table.heading("destination", text="destination")
 table.heading("start_date_time", text="start_date_time")
@@ -150,6 +156,7 @@ table.heading("price", text="Price")
 # تنظیم عرض ستون‌ها
 table.column("code", width=50)
 table.column("name", width=100)
+table.column("family", width=100)
 table.column("origin", width=100)
 table.column("destination", width=100)
 table.column("start_date_time", width=120)
@@ -167,8 +174,8 @@ Button(window, text="Edit", width=10, command=edit_btn_click).place(x=130, y=280
 Button(window, text="Remove", width=10, command=remove_btn_click).place(x=20, y=320)
 Button(window, text="Clear", width=10, command=reset_form).place(x=130, y=320)
 
-# بارگذاری اولیه داده‌ها از فایل
+
 load_data()
 
-# اجرای حلقه اصلی برنامه
+
 window.mainloop()
