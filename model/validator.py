@@ -51,7 +51,6 @@ def start_date_time_validator(start_date_time):
 
 
 
-
 def end_date_time_validator(end_date_time):
     if not (type(end_date_time) == str and re.match(r"^[a-zA-Z\s]{3,30}$",end_date_time)):
         raise ValueError("Invalid end_date_time !!!")
@@ -67,5 +66,10 @@ def ticket_type_validator(ticket_type):
 def price_validator(price):
     if not (type(price) == str and re.match(r"^[a-zA-Z\s]{3,30}$", price)):
         raise ValueError("Invalid price !!!")
+
+
+
+
+
 
 

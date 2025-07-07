@@ -67,7 +67,7 @@ def edit_btn_click():
             break
 
     if selected_index is not None:
-        updated = Ticket(code.get(),name.get(), origin.get(), destination.get(),start_date_time.get(),end_date_time.get(),
+        updated = Ticket(code.get(),name.get(),family.get(), origin.get(), destination.get(),start_date_time.get(),end_date_time.get(),
                          ticket_type.get(), int(price.get()))
         errors = updated.values()
         if errors:

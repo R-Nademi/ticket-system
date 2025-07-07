@@ -14,6 +14,8 @@ class Ticket:
         self.ticket_type = ticket_type
         self.price = price
 
+
+
     def __repr__(self):
         return f"{self.__dict__}"
 
@@ -100,3 +102,7 @@ class Ticket:
     def price(self, value):
         price_validator(value)
         self._price = value
+
+
+
+
