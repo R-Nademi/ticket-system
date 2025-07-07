@@ -101,7 +101,7 @@ def remove_btn_click():
 # ایجاد پنجره اصلی
 window = Tk()
 window.title("Ticket Info")
-window.geometry("1280x400")
+window.geometry("1270x400")
 
 # تعریف متغیرهای فرم
 code = StringVar()
@@ -166,8 +166,8 @@ table.column("family", width=100)
 table.column("birth_date", width=100)
 table.column("origin", width=100)
 table.column("destination", width=100)
-table.column("start_date_time", width=120)
-table.column("end_date_time", width=120)
+table.column("start_date_time", width=110)
+table.column("end_date_time", width=110)
 table.column("ticket_type", width=80)
 table.column("price", width=80)
 
