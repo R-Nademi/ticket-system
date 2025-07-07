@@ -147,7 +147,7 @@ Label(window, text="Price:").place(x=20, y=180)
 Entry(window, textvariable=price).place(x=130, y=180)
 
 # جدول سمت راست برای نمایش بلیط‌ها
-table = ttk.Treeview(window, columns=("code","name", "origin","family","birth_date","destination", "start_date_time","end_date_time","ticket_type","price"), show="headings")
+table = ttk.Treeview(window, columns=("ticket_type","code","name","family","birth_date","origin","destination","price", "start_date_time","end_date_time"), show="headings")
 table.heading("code", text="code")
 table.heading("name", text="name")
 table.heading("family", text="family")
