@@ -2,8 +2,8 @@ from model.entity.ticket import Ticket
 
 
 ticket = Ticket(1, "Ali", "AliPour",
-                   "Mashhad", "10:30",
-           "14:00", "16:00", "Airline")
+                   "1360", "Mashhad",
+           "Tehran", "10.30", "12.00")
 
 print(ticket)
 print(ticket.to_tuple())
