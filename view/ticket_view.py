@@ -101,7 +101,7 @@ def remove_btn_click():
 # ایجاد پنجره اصلی
 window = Tk()
 window.title("Ticket Info")
-window.geometry("1290x400")
+window.geometry("1280x400")
 
 # تعریف متغیرهای فرم
 code = StringVar()
@@ -116,37 +116,35 @@ ticket_type = StringVar()
 price = StringVar()
 
 # ساخت لیبل‌ها و ورودی‌ها در سمت چپ با متد place
-Label(window, text="code:").place(x=20,y=20)
-Entry(window, textvariable=code).place(x=130,y=20)
+Label(window, text="code:").place(x=20,y=40)
+Entry(window, textvariable=code).place(x=130,y=40)
 
-Label(window, text="name:").place(x=20, y=40)
-Entry(window, textvariable=name).place(x=130, y=40)
+Label(window, text="name:").place(x=20, y=60)
+Entry(window, textvariable=name).place(x=130, y=60)
 
 Label(window, text="family:").place(x=20, y=80)
 Entry(window, textvariable=family).place(x=130, y=80)
 
-Label(window, text="birth_date:").place(x=20, y=140)
-Entry(window, textvariable=birth_date).place(x=130, y=140)
+Label(window, text="birth_date:").place(x=20, y=100)
+Entry(window, textvariable=birth_date).place(x=130, y=100)
 
+Label(window, text="origin:").place(x=20, y=120)
+Entry(window, textvariable=origin).place(x=130, y=120)
 
-Label(window, text="origin:").place(x=20, y=60)
-Entry(window, textvariable=origin).place(x=130, y=60)
+Label(window, text="destination:").place(x=20, y=140)
+Entry(window, textvariable=destination).place(x=130, y=140)
 
+Label(window, text="start_date_time:").place(x=20, y=200)
+Entry(window, textvariable=start_date_time).place(x=130, y=200)
 
-Label(window, text="destination:").place(x=20, y=100)
-Entry(window, textvariable=destination).place(x=130, y=100)
-
-Label(window, text="start_date_time:").place(x=20, y=140)
-Entry(window, textvariable=start_date_time).place(x=130, y=140)
-
-Label(window, text="end_date_time:").place(x=20, y=180)
-Entry(window, textvariable=end_date_time).place(x=130, y=180)
+Label(window, text="end_date_time:").place(x=20, y=220)
+Entry(window, textvariable=end_date_time).place(x=130, y=220)
 
 Label(window, text="ticket_type:").place(x=20, y=20)
 Entry(window, textvariable=ticket_type).place(x=130, y=20)
 
-Label(window, text="Price:").place(x=20, y=220)
-Entry(window, textvariable=price).place(x=130, y=220)
+Label(window, text="Price:").place(x=20, y=180)
+Entry(window, textvariable=price).place(x=130, y=180)
 
 # جدول سمت راست برای نمایش بلیط‌ها
 table = ttk.Treeview(window, columns=("code","name", "origin","family","birth_date","destination", "start_date_time","end_date_time","ticket_type","price"), show="headings")
