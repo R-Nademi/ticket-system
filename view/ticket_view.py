@@ -119,8 +119,8 @@ price = StringVar()
 Label(window, text="code:").place(x=20,y=20)
 Entry(window, textvariable=code).place(x=130,y=20)
 
-Label(window, text="name:").place(x=20, y=20)
-Entry(window, textvariable=name).place(x=130, y=20)
+Label(window, text="name:").place(x=20, y=40)
+Entry(window, textvariable=name).place(x=130, y=40)
 
 Label(window, text="family:").place(x=20, y=80)
 Entry(window, textvariable=family).place(x=130, y=80)
@@ -182,8 +182,8 @@ Button(window, text="Save", width=10, command=save_btn_click).place(x=20, y=280)
 Button(window, text="Edit", width=10, command=edit_btn_click).place(x=130, y=280)
 Button(window, text="Remove", width=10, command=remove_btn_click).place(x=20, y=320)
 Button(window, text="Clear", width=10, command=reset_form).place(x=130, y=320)
-Button(window, text="search", width=10, command=reset_form).place(x=130, y=360)
-
+Button(window, text="search", width=10, command=reset_form).place(x=20, y=360)
+Button(window, text="sell", width=10, command=reset_form).place(x=130, y=360)
 
 load_data()
 
