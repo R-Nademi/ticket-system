@@ -17,6 +17,10 @@ def family_validator(family):
     if not (type(family) == str and re.match(r"^[a-zA-Z\s]{3,30}$",family)):
         raise ValueError("Invalid family !!!")
 
+def birth_date_validator(birth_date):
+    if not (type(birth_date) == str and re.match(r"^\d{4}-\d{2}-\d{2}$",birth_date)):
+        raise ValueError("Invalid birth date !!!")
+
 
 def username_validator(username):
     if not (type(username) == str and re.match(r"^[a-zA-Z\s]{3,30}$",username)):

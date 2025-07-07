@@ -1,12 +1,13 @@
 from model.validator import *
-from model.validator import code_validator, family_validator
+from model.validator import code_validator, family_validator,birth_date_validator
 
 
 class Ticket:
-    def __init__(self, code, name, family, origin, destination, start_date_time, end_date_time, ticket_type, price):
+    def __init__(self, code, name, family,birth_date, origin, destination, start_date_time, end_date_time, ticket_type, price):
         self.code = code
         self.name = name
         self.family = family
+        self.birth_date = birth_date
         self.origin = origin
         self.destination = destination
         self.start_date_time = start_date_time
@@ -48,6 +49,15 @@ class Ticket:
     def family(self, value):
         family_validator(value)
         self._family = value
+
+    @property
+    def birth_date(self):
+        return  self._birth_date
+
+    @birth_date.setter
+    def birth_date(self, value):
+        birth_date_validator(value)
+        self._birth_date = value
 
     @property
     def origin(self):

@@ -1,7 +1,7 @@
 import os
 import pickle
 
-file_name = "ticket.dat"
+file_name = "ticket.date"
 
 def check_file():
     return os.path.exists(file_name)

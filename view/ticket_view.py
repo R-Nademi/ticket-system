@@ -4,7 +4,7 @@ import tkinter.messagebox as msg
 from model.repository.file_manager import *
 from model.entity.ticket import Ticket
 from model.entity.ticket import datetime
-from model.validator import ticket_type_validator
+from model.validator import ticket_type_validator, birth_date_validator
 
 
 def load_data():
@@ -21,6 +21,7 @@ def reset_form():
     code.set("")
     name.set("")
     family.set("")
+    birth_date.set("")
     origin.set("")
     destination.set("")
     start_date_time.set("")
@@ -31,7 +32,7 @@ def reset_form():
 
 
 def save_btn_click():
-    ticket = Ticket(code.get(), name.get(),family.get(), origin.get(), destination.get(),
+    ticket = Ticket(code.get(), name.get(),family.get(),birth_date.get(), origin.get(), destination.get(),
                     start_date_time.get(),end_date_time.get(), ticket_type.get(), int(price.get()))
     errors = ticket.values()
     if errors:
@@ -51,6 +52,7 @@ def table_select(event):
         code.set(selected_ticket.code)
         name.set(selected_ticket.name)
         family.set(selected_ticket.family)
+        birth_date.set(selected_ticket.birth_date)
         origin.set(selected_ticket.origin)
         destination.set(selected_ticket.destination)
         start_date_time.set(selected_ticket.start_date_time)
@@ -67,7 +69,7 @@ def edit_btn_click():
             break
 
     if selected_index is not None:
-        updated = Ticket(code.get(),name.get(),family.get(), origin.get(), destination.get(),start_date_time.get(),end_date_time.get(),
+        updated = Ticket(code.get(),name.get(),family.get(),birth_date.get(), origin.get(), destination.get(),start_date_time.get(),end_date_time.get(),
                          ticket_type.get(), int(price.get()))
         errors = updated.values()
         if errors:
@@ -99,12 +101,13 @@ def remove_btn_click():
 # ایجاد پنجره اصلی
 window = Tk()
 window.title("Ticket Info")
-window.geometry("1200x400")
+window.geometry("1285x400")
 
 # تعریف متغیرهای فرم
 code = StringVar()
 name = StringVar()
 family = StringVar()
+birth_date = StringVar()
 origin = StringVar()
 destination = StringVar()
 start_date_time = StringVar()
@@ -113,14 +116,17 @@ ticket_type = StringVar()
 price = StringVar()
 
 # ساخت لیبل‌ها و ورودی‌ها در سمت چپ با متد place
-Label(window, text="code:").place(x=20,y=20)
+Label(window, text="code:").place(x=10,y=20)
 Entry(window, textvariable=code).place(x=130,y=20)
 
-Label(window, text="name:").place(x=20, y=20)
+Label(window, text="name:").place(x=10, y=20)
 Entry(window, textvariable=name).place(x=130, y=20)
 
-Label(window, text="family:").place(x=20, y=80)
+Label(window, text="family:").place(x=10, y=80)
 Entry(window, textvariable=family).place(x=130, y=80)
+
+Label(window, text="birth_date:").place(x=20, y=140)
+Entry(window, textvariable=birth_date).place(x=130, y=140)
 
 
 Label(window, text="origin:").place(x=20, y=60)
@@ -130,10 +136,10 @@ Entry(window, textvariable=origin).place(x=130, y=60)
 Label(window, text="destination:").place(x=20, y=100)
 Entry(window, textvariable=destination).place(x=130, y=100)
 
-Label(window, text="start_date_time:").place(x=20, y=140)
+Label(window, text="start_date_time:").place(x=10, y=140)
 Entry(window, textvariable=start_date_time).place(x=130, y=140)
 
-Label(window, text="end_date_time:").place(x=20, y=180)
+Label(window, text="end_date_time:").place(x=10, y=180)
 Entry(window, textvariable=end_date_time).place(x=130, y=180)
 
 Label(window, text="ticket_type:").place(x=20, y=20)
@@ -143,10 +149,11 @@ Label(window, text="Price:").place(x=20, y=220)
 Entry(window, textvariable=price).place(x=130, y=220)
 
 # جدول سمت راست برای نمایش بلیط‌ها
-table = ttk.Treeview(window, columns=("code","name", "origin","family", "destination", "start_date_time","end_date_time","ticket_type","price"), show="headings")
+table = ttk.Treeview(window, columns=("code","name", "origin","family","birth_date","destination", "start_date_time","end_date_time","ticket_type","price"), show="headings")
 table.heading("code", text="code")
 table.heading("name", text="name")
 table.heading("family", text="family")
+table.heading("birth_date", text="birth_date")
 table.heading("origin", text="origin")
 table.heading("destination", text="destination")
 table.heading("start_date_time", text="start_date_time")
@@ -158,6 +165,7 @@ table.heading("price", text="Price")
 table.column("code", width=50)
 table.column("name", width=100)
 table.column("family", width=100)
+table.column("birth_date", width=100)
 table.column("origin", width=100)
 table.column("destination", width=100)
 table.column("start_date_time", width=120)
