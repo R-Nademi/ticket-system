@@ -116,13 +116,13 @@ ticket_type = StringVar()
 price = StringVar()
 
 # ساخت لیبل‌ها و ورودی‌ها در سمت چپ با متد place
-Label(window, text="code:").place(x=10,y=20)
+Label(window, text="code:").place(x=20,y=20)
 Entry(window, textvariable=code).place(x=130,y=20)
 
-Label(window, text="name:").place(x=10, y=20)
+Label(window, text="name:").place(x=20, y=20)
 Entry(window, textvariable=name).place(x=130, y=20)
 
-Label(window, text="family:").place(x=10, y=80)
+Label(window, text="family:").place(x=20, y=80)
 Entry(window, textvariable=family).place(x=130, y=80)
 
 Label(window, text="birth_date:").place(x=20, y=140)
@@ -136,10 +136,10 @@ Entry(window, textvariable=origin).place(x=130, y=60)
 Label(window, text="destination:").place(x=20, y=100)
 Entry(window, textvariable=destination).place(x=130, y=100)
 
-Label(window, text="start_date_time:").place(x=10, y=140)
+Label(window, text="start_date_time:").place(x=20, y=140)
 Entry(window, textvariable=start_date_time).place(x=130, y=140)
 
-Label(window, text="end_date_time:").place(x=10, y=180)
+Label(window, text="end_date_time:").place(x=20, y=180)
 Entry(window, textvariable=end_date_time).place(x=130, y=180)
 
 Label(window, text="ticket_type:").place(x=20, y=20)
