@@ -1,5 +1,5 @@
-from model.validator import *
-from model.validator import code_validator, family_validator,birth_date_validator
+from model.tools.validator import *
+
 
 
 class Ticket:
