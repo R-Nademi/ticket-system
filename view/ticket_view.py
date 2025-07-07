@@ -101,7 +101,7 @@ def remove_btn_click():
 # ایجاد پنجره اصلی
 window = Tk()
 window.title("Ticket Info")
-window.geometry("1270x400")
+window.geometry("1260x400")
 
 # تعریف متغیرهای فرم
 code = StringVar()
@@ -128,11 +128,11 @@ Entry(window, textvariable=family).place(x=130, y=80)
 Label(window, text="birth_date:").place(x=20, y=100)
 Entry(window, textvariable=birth_date).place(x=130, y=100)
 
-Label(window, text="origin:").place(x=20, y=120)
-Entry(window, textvariable=origin).place(x=130, y=120)
+Label(window, text="origin:").place(x=20, y=140)
+Entry(window, textvariable=origin).place(x=130, y=140)
 
-Label(window, text="destination:").place(x=20, y=140)
-Entry(window, textvariable=destination).place(x=130, y=140)
+Label(window, text="destination:").place(x=20, y=160)
+Entry(window, textvariable=destination).place(x=130, y=160)
 
 Label(window, text="start_date_time:").place(x=20, y=200)
 Entry(window, textvariable=start_date_time).place(x=130, y=200)
