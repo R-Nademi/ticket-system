@@ -101,7 +101,7 @@ def remove_btn_click():
 # ایجاد پنجره اصلی
 window = Tk()
 window.title("Ticket Info")
-window.geometry("1285x400")
+window.geometry("1290x400")
 
 # تعریف متغیرهای فرم
 code = StringVar()
