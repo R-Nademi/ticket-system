@@ -3,7 +3,8 @@ from model.tools.validator import *
 
 
 class Ticket:
-    def __init__(self, code, name, family,birth_date, origin, destination, start_date_time, end_date_time, ticket_type, price):
+    def __init__(self, code, name, family,birth_date, origin, destination, start_date_time,
+                 end_date_time, ticket_type,seat_number, price):
         self.code = code
         self.name = name
         self.family = family
@@ -13,6 +14,7 @@ class Ticket:
         self.start_date_time = start_date_time
         self.end_date_time = end_date_time
         self.ticket_type = ticket_type
+        self.seat_number = seat_number
         self.price = price
 
 
@@ -103,6 +105,15 @@ class Ticket:
     def ticket_type(self, value):
         ticket_type_validator(value)
         self._ticket_type = value
+
+    @property
+    def seat_number(self):
+         return  self._seat_number
+
+    @seat_number.setter
+    def seat_number(self, value):
+        seat_number_validator(value)
+        self._seat_number = value
 
     @property
     def price(self):

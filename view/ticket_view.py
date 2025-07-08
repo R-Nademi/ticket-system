@@ -25,13 +25,16 @@ def reset_form():
     start_date_time.set("")
     end_date_time.set("")
     ticket_type.set("")
+    Seat_numbe.set("")
     price.set("")
+
+
     load_data()
 
 
 def save_btn_click():
     ticket = Ticket(code.get(), name.get(),family.get(),birth_date.get(), origin.get(), destination.get(),
-                    start_date_time.get(),end_date_time.get(), ticket_type.get(), int(price.get()))
+                    start_date_time.get(),end_date_time.get(), ticket_type.get(), seat_number.get(),int(price.get()))
     errors = ticket.values()
     if errors:
         msg.showerror("Error", "\n".join(errors))
@@ -56,6 +59,7 @@ def table_select(event):
         start_date_time.set(selected_ticket.start_date_time)
         end_date_time.set(selected_ticket.end_date_time)
         ticket_type.set(selected_ticket.ticket_type)
+        seat_number.set(selected_ticket.seat_number)
         price.set(selected_ticket.price)
 
 
@@ -68,7 +72,7 @@ def edit_btn_click():
 
     if selected_index is not None:
         updated = Ticket(code.get(),name.get(),family.get(),birth_date.get(), origin.get(), destination.get(),start_date_time.get(),end_date_time.get(),
-                         ticket_type.get(), int(price.get()))
+                         ticket_type.get(),seat_number.get(), int(price.get()))
         errors = updated.values()
         if errors:
             msg.showerror("Error", "\n".join(errors))
@@ -111,6 +115,7 @@ destination = StringVar()
 start_date_time = StringVar()
 end_date_time = StringVar()
 ticket_type = StringVar()
+seat_number = StringVar()
 price = StringVar()
 
 # ساخت لیبل‌ها و ورودی‌ها در سمت چپ با متد place
@@ -129,23 +134,27 @@ Entry(window, textvariable=birth_date).place(x=130, y=100)
 Label(window, text="origin:").place(x=20, y=140)
 Entry(window, textvariable=origin).place(x=130, y=140)
 
-Label(window, text="destination:").place(x=20, y=160)
-Entry(window, textvariable=destination).place(x=130, y=160)
+Label(window, text="destination:").place(x=20, y=180)
+Entry(window, textvariable=destination).place(x=130, y=180)
 
-Label(window, text="start_date_time:").place(x=20, y=200)
-Entry(window, textvariable=start_date_time).place(x=130, y=200)
+Label(window, text="start_date_time:").place(x=20, y=220)
+Entry(window, textvariable=start_date_time).place(x=130, y=220)
 
-Label(window, text="end_date_time:").place(x=20, y=220)
-Entry(window, textvariable=end_date_time).place(x=130, y=220)
+Label(window, text="end_date_time:").place(x=20, y=240)
+Entry(window, textvariable=end_date_time).place(x=130, y=240)
 
 Label(window, text="ticket_type:").place(x=20, y=20)
 Entry(window, textvariable=ticket_type).place(x=130, y=20)
 
-Label(window, text="Price:").place(x=20, y=180)
-Entry(window, textvariable=price).place(x=130, y=180)
+Label(window, text="seat_number:").place(x=20, y=160)
+Entry(window, textvariable=seat_number).place(x=130, y=160)
+
+Label(window, text="Price:").place(x=20, y=200)
+Entry(window, textvariable=price).place(x=130, y=200)
 
 # جدول سمت راست برای نمایش بلیط‌ها
-table = ttk.Treeview(window, columns=("ticket_type","code","name","family","birth_date","origin","destination","price", "start_date_time","end_date_time"), show="headings")
+table = ttk.Treeview(window, columns=("ticket_type","code","name","family","birth_date","origin",
+                                      "seat_number", "destination","price","start_date_time","end_date_time"), show="headings")
 table.heading("code", text="code")
 table.heading("name", text="name")
 table.heading("family", text="family")
@@ -155,18 +164,20 @@ table.heading("destination", text="destination")
 table.heading("start_date_time", text="start_date_time")
 table.heading("end_date_time", text="end_date_time")
 table.heading("ticket_type", text="ticket_type")
+table.heading("seat_number", text="seat_number")
 table.heading("price", text="Price")
 
 # تنظیم عرض ستون‌ها
 table.column("code", width=50)
-table.column("name", width=100)
-table.column("family", width=100)
-table.column("birth_date", width=100)
-table.column("origin", width=100)
-table.column("destination", width=100)
-table.column("start_date_time", width=110)
-table.column("end_date_time", width=110)
+table.column("name", width=80)
+table.column("family", width=95)
+table.column("birth_date", width=80)
+table.column("origin", width=95)
+table.column("destination", width=95)
+table.column("start_date_time", width=95)
+table.column("end_date_time", width=95)
 table.column("ticket_type", width=80)
+table.column("seat_number", width=80)
 table.column("price", width=80)
 
 # جایگذاری جدول در سمت راست
