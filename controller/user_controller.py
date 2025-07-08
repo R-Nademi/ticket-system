@@ -1,3 +1,5 @@
+from idlelib.query import CustomRun
+
 from model.entity.ticket import Ticket
 
 
@@ -40,3 +42,13 @@ class usercontroller:
             return True, f"ticket sell successfully - {ticket_list}"
         except Exception as e:
             return False, f"ticket sell failed\n{e}"
+
+
+    def admin(self):
+        try:
+            for user in ticket_list:
+                if user.role == "admin":
+                    return True, f"ticket admin successfully - {user}"
+
+            else:
+                 return False, f"ticket customer "
