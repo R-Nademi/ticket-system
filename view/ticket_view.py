@@ -178,8 +178,8 @@ Button(window, text="Save", width=10, command=save_btn_click).place(x=20, y=280)
 Button(window, text="Edit", width=10, command=edit_btn_click).place(x=130, y=280)
 Button(window, text="Remove", width=10, command=remove_btn_click).place(x=20, y=320)
 Button(window, text="Clear", width=10, command=reset_form).place(x=130, y=320)
-Button(window, text="search", width=10, command=reset_form).place(x=20, y=360)
-Button(window, text="sell", width=10, command=reset_form).place(x=130, y=360)
+Button(window, text="Search", width=10, command=reset_form).place(x=20, y=360)
+Button(window, text="Sell", width=10, command=reset_form).place(x=130, y=360)
 
 load_data()
 

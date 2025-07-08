@@ -22,7 +22,7 @@ class ticketcontroller:
 
 
 
-    def delete(self,code):
+    def remove(self,code):
         try:
             return True, f"ticket removed successfully - {code}"
         except Exception as e:
@@ -36,4 +36,10 @@ class ticketcontroller:
         except Exception as e:
             return False,f"find error{e}"
 
+
+    def sell(self):
+        try:
+            return True, ticket_list
+        except Exception as e:
+            return False,f"sell error{e}"
 
