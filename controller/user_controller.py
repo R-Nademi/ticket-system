@@ -30,13 +30,13 @@ class usercontroller:
 
     def find_all(self):
         try:
-            return True,ticket_list
+            return True, f"ticket find all successfully - {ticket_list}"
         except Exception as e:
-            return False,f"find error{e}"
+            return False, f"ticket find all failed\n{e}"
 
 
     def sell(self):
         try:
-            return True, ticket_list
+            return True, f"ticket sell successfully - {ticket_list}"
         except Exception as e:
-            return False,f"sell error{e}"
+            return False, f"ticket sell failed\n{e}"
