@@ -25,7 +25,7 @@ def reset_form():
     start_date_time.set("")
     end_date_time.set("")
     ticket_type.set("")
-    Seat_numbe.set("")
+    seat_number.set("")
     price.set("")
 
 
