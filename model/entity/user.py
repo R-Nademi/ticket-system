@@ -1,7 +1,5 @@
 from model.tools.validator import *
 
-from model.tools.validator import code_validator, name_validator, family_validator,
-username_validator,password_validator,role_validator
 
 
 
