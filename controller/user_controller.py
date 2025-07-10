@@ -44,7 +44,7 @@ class usercontroller:
             return False, f"ticket sell failed\n{e}"
 
 
-    def admin(self):
+    def role(self):
         try:
             for user in ticket_list:
                 if user.role == "admin":
