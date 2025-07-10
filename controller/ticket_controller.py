@@ -3,10 +3,10 @@ from model.entity.ticket import Ticket
 
 ticket_list = []
 
-class ticketcontroller:
-    def save(self,code,name,family,birth_date,origin,destination,start_date_time,end_date_time,ticket_type,price):
+class TicketController:
+    def save(self,code,name,family,birth_date,origin,destination,start_date_time,end_date_time,ticket_type,seat_number,price):
         try:
-            ticket = Ticket(code,name,family,birth_date,origin,destination,start_date_time,end_date_time,ticket_type,price)
+            ticket = Ticket(code,name,family,birth_date,origin,destination,start_date_time,end_date_time,ticket_type,seat_number, price)
             ticket_list.append(ticket)
             return True,f"ticket save successfully{ticket}"
         except Exception as e:
