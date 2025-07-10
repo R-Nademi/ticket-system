@@ -51,4 +51,4 @@ class usercontroller:
                     return True, f"ticket admin successfully - {user}"
 
             else:
-                 return False, f"ticket customer "
+                 return False, f"ticket customer"
